@@ -3,14 +3,12 @@
     --dark: #1e272e;
     --light-dark: #2f3640;
     --light: #f5f6fa;
-    --glass: rgba(255, 255, 255, 0.03);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
 body { background-color: var(--dark); color: var(--light); line-height: 1.6; overflow-x: hidden; }
 
 .navbar { position: fixed; top: 0; width: 100%; background: var(--dark); padding: 1.5rem 0; z-index: 1000; border-bottom: 3px solid var(--primary); }
-.container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 .logo { font-size: 2rem; font-weight: 700; color: var(--primary); text-decoration: none; }
 .nav-links a { color: var(--light); text-decoration: none; font-weight: 600; margin-left: 2rem; transition: 0.3s; }
 .nav-links a:hover { color: var(--primary); }
@@ -18,18 +16,17 @@ body { background-color: var(--dark); color: var(--light); line-height: 1.6; ove
 .hero { height: 100vh; background: url('https://static.photos/technology/1920x1080/1') center/cover; display: flex; align-items: center; position: relative; margin-top: 101px; }
 .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
 .hero-content { position: relative; z-index: 1; text-align: center; width: 100%; }
-.hero h1 { font-size: 4rem; color: var(--primary); margin-bottom: 1rem; }
-.cta-button { display: inline-block; padding: 1rem 2rem; background: var(--primary); color: var(--dark); text-decoration: none; font-weight: 600; border-radius: 50px; }
+.hero h1 { font-size: 4rem; color: var(--primary); }
 
-.team-section, .control-section { padding: 5rem 0; background: var(--light-dark); }
-.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.team-card { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--primary); padding: 2rem; border-radius: 12px; }
+.team-section { padding: 5rem 0; background: var(--light-dark); }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+.team-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--primary); padding: 2rem; border-radius: 12px; text-align: center; }
 
 /* İletişim Sayfası */
 .contact-section-new { padding: 80px 0; background: var(--dark); }
 .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .map-container iframe { border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.form-container h2 { font-size: 2.2rem; margin: 20px 0; color: white; }
+.form-container h2 { font-size: 2rem; margin-bottom: 20px; color: white; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 input, textarea { width: 100%; padding: 15px; background: transparent; border: 1px solid #444; border-radius: 8px; color: white; margin-bottom: 15px; }
 .submit-btn { background: #1a1a1a; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; transition: 0.3s; font-weight: 600; }
@@ -38,10 +35,7 @@ input, textarea { width: 100%; padding: 15px; background: transparent; border: 1
 /* Footer */
 .main-footer { background: #0b0e14; padding: 4rem 0 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
 .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
-.footer-address h3, .footer-links h3 { color: var(--primary); margin-bottom: 1.5rem; }
 .social-icons { display: flex; gap: 10px; }
-.social-icons a { width: 40px; height: 40px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border-radius: 5px; color: white; text-decoration: none; }
-.footer-links ul { list-style: none; }
-.footer-links ul li a { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; }
+.social-icons a { width: 40px; height: 40px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border-radius: 5px; color: white; text-decoration: none; font-size: 1.2rem; }
 
 @media (max-width: 900px) { .contact-wrapper, .footer-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } .nav-links { display: none; } }
