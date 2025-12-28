@@ -1,112 +1,34 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AQUATEAM | İnsansız Su Altı Sistemleri</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container">
+<footer id="contact" class="main-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand" data-aos="fade-right">
             <a href="#" class="logo">AQUATEAM</a>
-            <div class="nav-links">
-                <a href="#">Ana Sayfa</a>
-                <a href="#team">Takımımız</a>
-                <a href="#project">Proje: CORAL</a>
-                <a href="#specs">Özellikler</a>
-                <a href="#innovation">Özgünlük</a>
-                <a href="#contact">İletişim</a> 
-            </div>
-            <button class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content" data-aos="zoom-out">
-            <h1>AQUATEAM</h1>
-            <p class="subtitle">TEKNOFEST 2026 İnsansız Su Altı Sistemleri Yarışması - İleri Kategori</p>
-            <a href="#project" class="cta-button">Projemizi Keşfedin</a>
-        </div>
-    </section>
-
-    <section id="team" class="team-section">
-        <div class="container">
-            <div class="team-header" data-aos="fade-up">
-                <h2 class="section-title">BİZ AQUATEAM'İZ</h2>
-                <p class="section-description">Afyon Kocatepe Üniversitesi bünyesinde kurulmuş, 6 mühendislik öğrencisi ve 1 akademik danışmandan oluşan bir ekibiz.</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-card" data-aos="fade-up"><h3>Mekanik Ekip</h3><p>Robotun mekanik tasarımı, montajı ve su geçirmezlik testlerinden sorumludur.</p></div>
-                <div class="team-card" data-aos="fade-up" data-aos-delay="100"><h3>Yazılım Ekibi</h3><p>Otonom sistem algortimaları ve görüntü işleme yazılımlarını geliştirir.</p></div>
-                <div class="team-card" data-aos="fade-up" data-aos-delay="200"><h3>Elektronik Ekibi</h3><p>Güç dağıtımı ve sensör entegrasyonundan sorumludur.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="specs" class="specs-section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-down">CORAL TEKNİK VERİLER</h2>
-            <div class="specs-table-container" data-aos="zoom-in">
-                <table class="specs-table">
-                    <tr><th>Donanım / Özellik</th><th>Açıklama</th></tr>
-                    <tr><td>Kontrol Ünitesi</td><td>Raspberry Pi 5 & Pixhawk 6C</td></tr>
-                    <tr><td>Hareket Sistemi</td><td>6 Adet Fırçasız İtici Motor</td></tr>
-                    <tr><td>Yapay Zeka</td><td>YOLOv9 Nesne Tespiti</td></tr>
-                    <tr><td>Sensörler</td><td>Ping Sonar, Derinlik, Sony Kamera</td></tr>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section id="innovation" class="innovation-section">
-        <div class="container">
-            <div class="team-header" data-aos="fade-up">
-                <h2 class="section-title">Özgünlük ve Yerlilik</h2>
-            </div>
-            <div class="innovation-container">
-                <div class="innovation-card" data-aos="flip-left">
-                    <h3>Özgünlük</h3>
-                    <p>Mekanik, elektronik ve yazılım altyapımızın tamamı takım üyelerimiz tarafından özgün olarak geliştirilmiştir.</p>
+            <div class="social-icons" id="footer-socials">
                 </div>
-                <div class="innovation-card" data-aos="flip-right">
-                    <h3>Yerlilik</h3>
-                    <p>Yazılım altyapımız tamamen yerli mühendislik ürünüdür. Şase ve gövdede yerli üretim olanaklarını kullanıyoruz.</p>
-                </div>
+        </div>
+
+        <div class="footer-address" data-aos="fade-up">
+            <h3>Adres</h3>
+            <div class="address-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Afyon Kocatepe Üniversitesi, ANS Kampüsü, TYK Atölyesi, Afyonkarahisar</p>
+            </div>
+            <div class="address-item">
+                <i class="fas fa-envelope"></i>
+                <p id="footer-email">aquateam0303@gmail.com</p>
             </div>
         </div>
-    </section>
 
-    <footer id="contact" class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand" data-aos="fade-right">
-                <a href="#" class="logo">AQUATEAM</a>
-                <div class="social-icons" id="footer-socials"></div>
-            </div>
-            <div class="footer-address" data-aos="fade-up">
-                <h3>Adres</h3>
-                <div class="address-item"><i class="fas fa-map-marker-alt"></i><p>Afyon Kocatepe Üniversitesi, Afyonkarahisar</p></div>
-                <div class="address-item"><i class="fas fa-envelope"></i><p id="footer-email"></p></div>
-            </div>
-            <div class="footer-links" data-aos="fade-left">
-                <h3>Hızlı Bağlantılar</h3>
-                <ul>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Ana Sayfa</a></li>
-                    <li><a href="#team"><i class="fas fa-chevron-right"></i> Takımımız</a></li>
-                    <li><a href="#project"><i class="fas fa-chevron-right"></i> Proje: CORAL</a></li>
-                </ul>
-            </div>
+        <div class="footer-links" data-aos="fade-left">
+            <h3>Hızlı Bağlantılar</h3>
+            <ul>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> Ana Sayfa</a></li>
+                <li><a href="#team"><i class="fas fa-chevron-right"></i> Takımımız</a></li>
+                <li><a href="#project"><i class="fas fa-chevron-right"></i> Proje: CORAL</a></li>
+                <li><a href="#innovation"><i class="fas fa-chevron-right"></i> Özgünlük</a></li>
+            </ul>
         </div>
-        <div class="footer-bottom"><p>© 2025 AQUATEAM - Tüm Hakları Saklıdır.</p></div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 AQUATEAM - Afyon Kocatepe Üniversitesi. Tüm Hakları Saklıdır.</p>
+    </div>
+</footer>
