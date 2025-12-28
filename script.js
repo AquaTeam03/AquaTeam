@@ -1,10 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // AOS Başlat
-    if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 1000, once: true });
-    }
+    if (typeof AOS !== 'undefined') { AOS.init({ duration: 1000, once: true }); }
 
-    // Footer Sosyal Medya
+    const openBtns = [document.getElementById('open-contact'), document.querySelector('.open-contact-footer')];
+    const closeBtn = document.getElementById('close-contact');
+    const overlay = document.getElementById('contact-overlay');
+
+    // Açma Fonksiyonu
+    const openOverlay = () => {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Ana sayfa kaymasın
+    };
+
+    // Kapatma Fonksiyonu
+    const closeOverlay = () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Kaydırmayı geri aç
+    };
+
+    openBtns.forEach(btn => {
+        if(btn) btn.addEventListener('click', openOverlay);
+    });
+
+    if(closeBtn) closeBtn.addEventListener('click', closeOverlay);
+
+    // ESC tuşuyla kapatma desteği
+    window.addEventListener('keydown', (e) => {
+        if(e.key === "Escape") closeOverlay();
+    });
+
+    // Sosyal Medya İkonları
     const socialBox = document.getElementById('footer-socials');
     const socials = [
         { icon: "fab fa-linkedin", link: "https://www.linkedin.com/company/aquateam-aku/" },
@@ -21,20 +45,4 @@ document.addEventListener('DOMContentLoaded', function() {
             socialBox.appendChild(a);
         });
     }
-
-    // Smooth Scroll (Yumuşak Kaydırma)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
 });
