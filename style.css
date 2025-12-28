@@ -1,41 +1,116 @@
-:root {
-    --primary: #00a8ff;
-    --dark: #0b0e14;
-    --light: #f5f6fa;
+/* NAVBARDAKİ BUTON STİLİ */
+.nav-contact-btn {
+    background-color: var(--primary);
+    color: var(--dark);
+    border: none;
+    padding: 0.7rem 1.4rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-body { background-color: #1e272e; color: var(--light); overflow-x: hidden; }
+.nav-contact-btn:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
 
-/* Navbar */
-.navbar { position: fixed; top: 0; width: 100%; background: #1e272e; padding: 1.5rem 0; z-index: 1000; border-bottom: 3px solid var(--primary); }
-.container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 2rem; font-weight: 700; color: var(--primary); text-decoration: none; }
-.nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a { color: white; text-decoration: none; font-weight: 600; }
-.nav-contact-btn { background: var(--primary); color: #1e272e; border: none; padding: 0.8rem 1.5rem; border-radius: 5px; cursor: pointer; font-weight: 700; }
-
-/* İletişim Overlay (Bağımsız Sayfa) */
+/* TAM EKRAN İLETİŞİM KATMANI */
 .contact-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: var(--dark); z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d1117; /* Bağımsız Arka Plan */
+    z-index: 99999; /* Her şeyin üstünde */
     display: none; /* Başlangıçta gizli */
-    opacity: 0; transition: opacity 0.4s ease;
-    overflow-y: auto; padding-top: 50px;
+    overflow-y: auto;
+    padding: 60px 0;
 }
-.contact-overlay.active { display: block; opacity: 1; }
+
+.contact-overlay.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 .close-contact {
-    position: fixed; top: 20px; right: 40px; background: none; border: none;
-    color: white; font-size: 4rem; cursor: pointer; z-index: 10001;
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 4rem;
+    cursor: pointer;
+    line-height: 1;
 }
 
-.contact-container { width: 90%; max-width: 1200px; margin: 80px auto; }
-.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact-full-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
 
-.form-container h2 { font-size: 2rem; color: var(--primary); margin: 20px 0; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-input, textarea { width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid #444; color: white; border-radius: 8px; margin-bottom: 15px; }
-.submit-btn { background: var(--primary); color: var(--dark); padding: 15px 30px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; }
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
 
-@media (max-width: 900px) { .contact-wrapper { grid-template-columns: 1fr; } .close-contact { right: 20px; font-size: 3rem; } }
+.contact-form-area h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin: 20px 0;
+}
+
+.contact-badge {
+    background: #222;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#contact-form-inner input, #contact-form-inner textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #333;
+    color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.send-btn {
+    background: var(--primary);
+    color: var(--dark);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover { background: white; transform: translateX(5px); }
+
+@media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .input-row { grid-template-columns: 1fr; }
+    .close-contact { right: 20px; font-size: 3rem; }
+}
