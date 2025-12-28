@@ -1,30 +1,72 @@
-<button id="open-contact-btn" class="nav-contact-button">İletişim</button>
-
-<div id="contact-page-overlay" class="contact-overlay-layer">
-    <div class="contact-overlay-content">
-        <button id="close-contact-btn" class="close-overlay">×</button>
-        
-        <div class="contact-grid-system">
-            <div class="contact-map-box">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.312345678901!2d30.536!3d38.812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDQ4JzQzLjIiTiAzMMKwMzInMDkuNiJF!5e0!3m2!1str!2str!4v1640000000000!5m2!1str!2str" 
-                    width="100%" height="450" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy">
-                </iframe>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUATEAM | İnsansız Su Altı Sistemleri</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">AQUATEAM</a>
+            <div class="nav-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="#team">Takımımız</a>
+                <a href="#project">Proje: CORAL</a>
+                <button id="open-contact" class="contact-btn">İletişim</button>
             </div>
+        </div>
+    </nav>
 
-            <div class="contact-form-box">
-                <span class="contact-tag">Bize Ulaş</span>
-                <h2 class="contact-heading">Herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin</h2>
-                <form class="contact-form-inner">
-                    <div class="form-input-group">
-                        <input type="text" placeholder="Ad Soyad" required>
-                        <input type="email" placeholder="Mail Adresi" required>
-                    </div>
-                    <input type="text" placeholder="Konu" required>
-                    <textarea placeholder="Mesajınız" rows="5" required></textarea>
-                    <button type="submit" class="contact-submit-button">Mesajı Gönder →</button>
-                </form>
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>AQUATEAM</h1>
+                <p>İnsansız Su Altı Sistemleri Takımı</p>
+            </div>
+        </section>
+        </main>
+
+    <div id="contact-overlay" class="contact-screen">
+        <button id="close-contact" class="close-x">×</button>
+        <div class="contact-inner">
+            <div class="contact-grid">
+                <div class="map-area">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.982928503831!2d30.53634457635677!3d38.83281355042456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d939634f19b0f1%3A0x6b5333f02e0b57e!2sAfyon%20Kocatepe%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1700000000000" 
+                    width="100%" height="450" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="form-area">
+                    <span class="tag">Bize Ulaşın</span>
+                    <h2>Sorularınız için bizimle iletişime geçin</h2>
+                    <form id="contact-form-data">
+                        <div class="row">
+                            <input type="text" placeholder="Ad Soyad" required>
+                            <input type="email" placeholder="Mail Adresi" required>
+                        </div>
+                        <input type="text" placeholder="Konu" required>
+                        <textarea placeholder="Mesajınız" rows="5" required></textarea>
+                        <button type="submit" class="send-button">Mesajı Gönder →</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-info">
+                <p><i class="fas fa-map-marker-alt"></i> Afyon Kocatepe Üniversitesi, ANS Kampüsü, TYK Atölyesi</p>
+                <p><i class="fas fa-envelope"></i> aquateam0303@gmail.com</p>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 AQUATEAM - Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
