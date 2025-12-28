@@ -1,14 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // AOS Kütüphanesini Başlat
+    // AOS Başlat
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 1000, once: true });
-    }
-
-    // Mobil Menü
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
     }
 
     // Footer Sosyal Medya
@@ -29,14 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth Scroll
+    // Smooth Scroll (Yumuşak Kaydırma)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
             if (target) {
                 window.scrollTo({
-                    top: target.offsetTop - 80,
+                    top: target.offsetTop - 100,
                     behavior: 'smooth'
                 });
             }
