@@ -1,34 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
-    if (typeof AOS !== 'undefined') { AOS.init({ duration: 1000, once: true }); }
+    // AOS Başlatma
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 1000, once: true });
+    }
 
-    const openBtns = [document.getElementById('open-contact'), document.querySelector('.open-contact-footer')];
+    // İletişim Sayfası Kontrolü
+    const contactOverlay = document.getElementById('contact-overlay');
+    const openBtn = document.getElementById('open-contact'); // Navbardaki buton
+    const footerLink = document.querySelector('.open-contact-link'); // Footer linki
     const closeBtn = document.getElementById('close-contact');
-    const overlay = document.getElementById('contact-overlay');
 
-    // Açma Fonksiyonu
-    const openOverlay = () => {
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Ana sayfa kaymasın
+    function toggleContact(show) {
+        if (show) {
+            contactOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Arka plan kaymasın
+        } else {
+            contactOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Kaydırmayı geri aç
+        }
+    }
+
+    if (openBtn) openBtn.onclick = () => toggleContact(true);
+    if (footerLink) footerLink.onclick = () => toggleContact(true);
+    if (closeBtn) closeBtn.onclick = () => toggleContact(false);
+
+    // ESC tuşuyla kapatma
+    window.onkeydown = (e) => {
+        if (e.key === "Escape") toggleContact(false);
     };
 
-    // Kapatma Fonksiyonu
-    const closeOverlay = () => {
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Kaydırmayı geri aç
-    };
-
-    openBtns.forEach(btn => {
-        if(btn) btn.addEventListener('click', openOverlay);
-    });
-
-    if(closeBtn) closeBtn.addEventListener('click', closeOverlay);
-
-    // ESC tuşuyla kapatma desteği
-    window.addEventListener('keydown', (e) => {
-        if(e.key === "Escape") closeOverlay();
-    });
-
-    // Sosyal Medya İkonları
+    // Sosyal Medya İkonları Yükleme
     const socialBox = document.getElementById('footer-socials');
     const socials = [
         { icon: "fab fa-linkedin", link: "https://www.linkedin.com/company/aquateam-aku/" },
