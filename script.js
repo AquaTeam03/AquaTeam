@@ -1,30 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // AOS Animasyonlarını çalıştır
-    if (typeof AOS !== 'undefined') { AOS.init({ duration: 1000, once: true }); }
+    const openBtn = document.getElementById('open-contact-btn');
+    const closeBtn = document.getElementById('close-contact-btn');
+    const overlay = document.getElementById('contact-page-overlay');
 
-    // İletişim Buton Kontrolleri
-    const openBtn = document.getElementById('open-contact');
-    const closeBtn = document.getElementById('close-contact');
-    const contactOverlay = document.getElementById('contact-overlay');
-
-    if (openBtn && contactOverlay) {
-        openBtn.onclick = function() {
-            contactOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Arka planı kilitle
-        };
+    if (openBtn && overlay) {
+        openBtn.addEventListener('click', function() {
+            overlay.classList.add('is-active');
+            document.body.style.overflow = 'hidden'; // Ana sayfanın kaymasını engelle
+        });
     }
 
-    if (closeBtn && contactOverlay) {
-        closeBtn.onclick = function() {
-            contactOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Kilidi aç
-        };
+    if (closeBtn && overlay) {
+        closeBtn.addEventListener('click', function() {
+            overlay.classList.remove('is-active');
+            document.body.style.overflow = 'auto'; // Kaydırmayı geri aç
+        });
     }
 
-    // ESC tuşu ile kapatma
+    // ESC tuşuyla kapatma desteği
     window.addEventListener('keydown', function(e) {
-        if (e.key === "Escape" && contactOverlay.classList.contains('active')) {
-            contactOverlay.classList.remove('active');
+        if (e.key === "Escape") {
+            overlay.classList.remove('is-active');
             document.body.style.overflow = 'auto';
         }
     });
