@@ -1,41 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.querySelector('.navbar');
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    // Navbar Kaydırma Efekti
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) navbar.classList.add('scrolled');
-        else navbar.classList.remove('scrolled');
-    });
-
-    // Mobil Menü Aç/Kapat
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
     });
 
-    // Sosyal Medya Verileri ve Footer Oluşturma
-    const socialConfig = [
-        { icon: "fab fa-linkedin", link: "https://www.linkedin.com/company/aquateam-aku/" },
-        { icon: "fab fa-instagram", link: "https://www.instagram.com/aquateam.aku" },
-        { icon: "fab fa-youtube", link: "https://www.youtube.com/channel/UCU6G6FHqeZ5yLgDRqANEMMQ" }
-    ];
-
-    const socialBox = document.getElementById('footer-socials');
-    if (socialBox) {
-        socialConfig.forEach(item => {
-            const a = document.createElement('a');
-            a.href = item.link;
-            a.target = "_blank";
-            a.innerHTML = `<i class="${item.icon}"></i>`;
-            socialBox.appendChild(a);
-        });
-    }
-
-    // Mobil Menüden Bir Linke Tıklandığında Kapat
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if(navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            }
         });
     });
 });
