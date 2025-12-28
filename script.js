@@ -1,26 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const openBtn = document.getElementById('open-contact-btn');
-    const closeBtn = document.getElementById('close-contact-btn');
-    const overlay = document.getElementById('contact-page-overlay');
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.getElementById('open-contact');
+    const closeBtn = document.getElementById('close-contact');
+    const overlay = document.getElementById('contact-overlay');
 
-    if (openBtn && overlay) {
-        openBtn.addEventListener('click', function() {
-            overlay.classList.add('is-active');
-            document.body.style.overflow = 'hidden'; // Ana sayfanın kaymasını engelle
-        });
-    }
+    // Aç
+    openBtn.addEventListener('click', () => {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Arka plan kaymasın
+    });
 
-    if (closeBtn && overlay) {
-        closeBtn.addEventListener('click', function() {
-            overlay.classList.remove('is-active');
-            document.body.style.overflow = 'auto'; // Kaydırmayı geri aç
-        });
-    }
+    // Kapat
+    closeBtn.addEventListener('click', () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Kaydırmayı geri aç
+    });
 
-    // ESC tuşuyla kapatma desteği
-    window.addEventListener('keydown', function(e) {
-        if (e.key === "Escape") {
-            overlay.classList.remove('is-active');
+    // ESC tuşu ile kapat
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            overlay.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
     });
