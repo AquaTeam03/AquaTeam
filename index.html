@@ -14,11 +14,10 @@
         <div class="container">
             <a href="#" class="logo">AQUATEAM</a>
             <div class="nav-links">
-                <a href="#">Ana Sayfa</a>
+                <a href="index.html">Ana Sayfa</a>
                 <a href="#team">Takımımız</a>
                 <a href="#project">Proje: CORAL</a>
-                <a href="#innovation">Özgünlük & Yerlilik</a>
-                <a href="javascript:void(0)" id="open-contact">İletişim</a> 
+                <button id="open-contact" class="nav-contact-btn">İletişim</button>
             </div>
             <button class="menu-toggle"><i class="fas fa-bars"></i></button>
         </div>
@@ -29,23 +28,22 @@
         <div class="hero-content" data-aos="zoom-out">
             <h1>AQUATEAM</h1>
             <p class="subtitle">TEKNOFEST 2026 İnsansız Su Altı Sistemleri Yarışması - İleri Kategori</p>
-            <a href="#project" class="cta-button">Projemizi Keşfedin</a>
         </div>
     </section>
 
     <div id="contact-overlay" class="contact-overlay">
-        <button class="close-contact" id="close-contact">×</button>
-        <div class="contact-container-inner">
+        <button id="close-contact" class="close-contact">×</button>
+        <div class="contact-container">
             <div class="contact-wrapper">
                 <div class="map-container">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.331215446059!2d30.536761576472283!3d38.813351951563884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d93f77914856f7%3A0x6b810d24c30c34e0!2sAfyon%20Kocatepe%20%C3%9cniversitesi%20ANS%20Kamp%C3%BCs%C3%BC!5e0!3m2!1str!2str!4v1710000000000!5m2!1str!2str" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3086.910398687289!2d30.534246076569613!3d38.810565871744154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d96a793616259d%3A0x6334581177b7e565!2sAfyon%20Kocatepe%20%C3%9cniversitesi%20ANS%20Kamp%C3%BCs%C3%BC!5e0!3m2!1str!2str!4v1703761234567!5m2!1str!2str" 
                         width="100%" height="450" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
                 <div class="form-container">
                     <span class="badge">Bize Ulaşın</span>
-                    <h2>Sorularınız için bizimle iletişime geçin</h2>
+                    <h2>Herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin</h2>
                     <form id="contact-form">
                         <div class="form-row">
                             <input type="text" placeholder="Ad Soyad" required>
@@ -60,24 +58,16 @@
         </div>
     </div>
 
-    <footer class="main-footer">
+    <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <a href="#" class="logo">AQUATEAM</a>
-                <div class="social-icons" id="footer-socials"></div>
+                <div id="footer-socials" class="social-icons"></div>
             </div>
             <div class="footer-address">
                 <h3>Adres</h3>
-                <div class="address-item"><i class="fas fa-map-marker-alt"></i><p>AKÜ ANS Kampüsü, TYK Atölyesi, Afyonkarahisar</p></div>
-                <div class="address-item"><i class="fas fa-envelope"></i><p>aquateam0303@gmail.com</p></div>
-            </div>
-            <div class="footer-links">
-                <h3>Hızlı Menü</h3>
-                <ul>
-                    <li><a href="#">Ana Sayfa</a></li>
-                    <li><a href="#team">Takımımız</a></li>
-                    <li><a href="javascript:void(0)" class="open-contact-link">İletişim</a></li>
-                </ul>
+                <p><i class="fas fa-map-marker-alt"></i> AKÜ ANS Kampüsü, TYK Atölyesi, Afyonkarahisar</p>
+                <p><i class="fas fa-envelope"></i> aquateam0303@gmail.com</p>
             </div>
         </div>
     </footer>
