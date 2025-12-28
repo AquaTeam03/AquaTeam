@@ -1,105 +1,51 @@
-/* Navbar Butonu Tasarımı */
-.nav-contact-button {
-    background-color: var(--primary);
-    color: #1e272e;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 5px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    transition: 0.3s;
+:root {
+    --primary: #00a8ff;
+    --dark: #12181f;
+    --bg: #1e272e;
 }
 
-/* TAM EKRAN İLETİŞİM KATMANI (SİTEYİ BOZMAYAN YAPI) */
-.contact-overlay-layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0b0e14; /* Bağımsız Koyu Arka Plan */
-    z-index: 10000; /* Her şeyin üstünde */
-    display: none; /* Başlangıçta gizli */
-    overflow-y: auto;
-    padding: 50px 0;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
 
-.contact-overlay-layer.is-active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+body { background-color: var(--bg); color: white; min-height: 100vh; display: flex; flex-direction: column; }
 
-.close-overlay {
-    position: fixed;
-    top: 20px;
-    right: 40px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 4rem;
-    cursor: pointer;
-    z-index: 10001;
-}
+/* Navbar Sabitleme */
+.navbar { background: var(--dark); padding: 1.5rem 0; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 100; }
+.logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+.nav-links { display: flex; gap: 20px; align-items: center; }
+.nav-links a { color: white; text-decoration: none; font-weight: 600; }
 
-.contact-overlay-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
+.contact-btn { background: var(--primary); border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-weight: 700; }
 
-.contact-grid-system {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
+/* İçerik Alanı Kaymayı Engeller */
+.main-content { flex: 1; }
 
-.contact-tag {
-    background: #222;
-    padding: 6px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--primary);
-}
+.hero { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://static.photos/technology/1920x1080/1') center/cover; }
 
-.contact-heading {
-    font-size: 2.2rem;
-    margin: 20px 0;
-    color: white;
+/* İLETİŞİM EKRANI (OVERLAY) - SİTEYİ BOZMAYAN TEK YAPI */
+.contact-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--dark); z-index: 9999;
+    display: none; padding: 40px 0; overflow-y: auto;
 }
+.contact-screen.active { display: block; animation: fadeIn 0.3s ease; }
 
-.form-input-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-.contact-form-inner input, .contact-form-inner textarea {
-    width: 100%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    color: white;
-    outline: none;
-}
+.close-x { position: fixed; top: 20px; right: 40px; background: none; border: none; color: white; font-size: 4rem; cursor: pointer; }
 
-.contact-submit-button {
-    background: var(--primary);
-    color: #0b0e14;
-    border: none;
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-}
+.contact-inner { width: 90%; max-width: 1200px; margin: 60px auto; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 
-@media (max-width: 900px) {
-    .contact-grid-system { grid-template-columns: 1fr; }
-    .form-input-group { grid-template-columns: 1fr; }
-}
+.tag { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
+.form-area h2 { margin: 15px 0 25px; font-size: 2rem; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+input, textarea { width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 8px; margin-bottom: 15px; }
+.send-button { background: var(--primary); border: none; padding: 15px 30px; border-radius: 50px; font-weight: 700; cursor: pointer; }
+
+/* Footer Kayma Düzelmesi */
+.main-footer { background: var(--dark); padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: auto; }
+.footer-info { display: flex; justify-content: center; gap: 30px; margin-bottom: 15px; font-size: 0.9rem; }
+.footer-bottom { text-align: center; opacity: 0.5; font-size: 0.8rem; }
+
+@media (max-width: 800px) { .contact-grid, .row { grid-template-columns: 1fr; } .footer-info { flex-direction: column; align-items: center; gap: 10px; } }
