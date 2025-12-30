@@ -1,0 +1,224 @@
+/* =========================================
+   KOYU TEMA AYARLARI
+   ========================================= */
+:root {
+    --bg-dark: #0b0c10;       /* Siyah Arka Plan */
+    --bg-darker: #050608;     /* Daha Koyu Siyah */
+    --bg-card: #1f2833;       /* Kart Rengi (Koyu Gri) */
+    --text-main: #c5c6c7;     /* Gri Yazı */
+    --text-white: #ffffff;    /* Beyaz Başlık */
+    --accent: #00a8ff;        /* Mavi Vurgu (site1.jpg'deki mavi) */
+    
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    background-color: var(--bg-dark); 
+    color: var(--text-main); 
+    font-family: var(--font-body); 
+    line-height: 1.6; 
+    overflow-x: hidden; 
+}
+
+/* =========================================
+   NAVBAR & LOGO
+   ========================================= */
+.navbar {
+    position: fixed; top: 0; width: 100%; padding: 20px 0; z-index: 1000;
+    transition: all 0.4s ease; background: transparent;
+}
+.navbar.scrolled {
+    background-color: rgba(11, 12, 16, 0.95); padding: 10px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    border-bottom: 1px solid #1f2833;
+}
+.container {
+    width: 90%; max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo {
+    height: 60px; width: auto; transition: 0.3s;
+    border-radius: 5px; /* Logonun keskin köşelerini yumuşatır */
+}
+.navbar.scrolled .nav-logo { height: 50px; }
+
+.nav-links { display: flex; gap: 30px; }
+.nav-links a {
+    color: #fff; text-decoration: none; font-weight: 500; font-size: 0.9rem;
+    text-transform: uppercase; position: relative; transition: color 0.3s; letter-spacing: 1px;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a::after {
+    content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
+    background-color: var(--accent); transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.menu-toggle { display: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+    height: 100vh;
+    background-image: url('aqua1.3.jpg'); /* Okyanus Banner */
+    background-size: cover; background-position: center; background-attachment: fixed;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; position: relative;
+}
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(11,12,16,0.3), rgba(11,12,16,0.95));
+}
+.hero-content { position: relative; z-index: 2; max-width: 900px; padding: 20px; }
+.main-title {
+    font-family: var(--font-heading); font-size: 5rem; color: #fff;
+    letter-spacing: 3px; line-height: 1; margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(0, 168, 255, 0.5);
+}
+.sub-title { font-size: 1.5rem; color: var(--accent); margin-bottom: 20px; font-weight: 600; }
+.hero-tagline { color: #ccc; font-size: 1.1rem; margin-bottom: 40px; }
+
+.btn-neon {
+    display: inline-block; padding: 15px 45px; 
+    border: 2px solid var(--accent); color: var(--accent);
+    text-decoration: none; font-weight: 700; text-transform: uppercase;
+    transition: all 0.3s; 
+}
+.btn-neon:hover {
+    background-color: var(--accent); color: #0b0c10;
+    box-shadow: 0 0 30px var(--accent);
+}
+
+/* =========================================
+   ORTAK STİLLER
+   ========================================= */
+.section { padding: 100px 0; }
+.dark-bg { background-color: var(--bg-dark); }
+.darker-bg { background-color: var(--bg-darker); border-top: 1px solid #1f2833; }
+
+.section-title { font-family: var(--font-heading); font-size: 3rem; color: #fff; margin-bottom: 20px; }
+.highlight { color: var(--accent); }
+.divider { width: 80px; height: 4px; background-color: var(--accent); margin-bottom: 30px; }
+.mini-tag { color: var(--accent); letter-spacing: 2px; margin-bottom: 10px; display: block; font-weight: 700; }
+
+/* Hakkımızda Split Layout */
+.split-layout { display: flex; align-items: center; gap: 60px; }
+.text-block { flex: 1; }
+.stats-row { display: flex; gap: 40px; margin-top: 30px; }
+.num { font-size: 2.5rem; font-weight: 700; color: #fff; display: block; font-family: var(--font-heading); }
+.label { color: var(--accent); font-size: 0.9rem; text-transform: uppercase; }
+
+.image-block { flex: 1; position: relative; display: flex; justify-content: center; }
+.floating-img { width: 100%; max-width: 500px; animation: float 6s ease-in-out infinite; z-index: 2; }
+.glow-effect {
+    position: absolute; width: 300px; height: 300px; background: var(--accent);
+    filter: blur(100px); opacity: 0.2; border-radius: 50%; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); z-index: 1;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* =========================================
+   TAKIM BÖLÜMÜ (KOYU TEMA + SOL YAZI)
+   ========================================= */
+.team-layout { display: flex; gap: 60px; align-items: flex-start; }
+.team-sidebar { flex: 0 0 30%; position: relative; }
+.sticky-wrapper { position: sticky; top: 120px; }
+.section-big-title {
+    font-family: var(--font-heading); font-size: 4.5rem; line-height: 1; color: #fff; margin-bottom: 20px;
+}
+.section-desc { color: #aaa; margin-bottom: 30px; line-height: 1.7; }
+
+/* KART TASARIMI */
+.team-grid { flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.neon-card {
+    background-color: var(--bg-card); padding: 30px; border-radius: 10px;
+    border-left: 4px solid transparent; transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.neon-card:hover {
+    transform: translateY(-10px);
+    border-left-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(0, 168, 255, 0.15);
+}
+.card-icon { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
+.neon-card h3 { color: #fff; font-size: 1.2rem; margin-bottom: 10px; font-family: var(--font-heading); letter-spacing: 1px; }
+.neon-card p { font-size: 0.9rem; color: #bbb; }
+
+/* =========================================
+   PROJE BÖLÜMÜ (ÇAKIŞMAYAN DÜZEN)
+   ========================================= */
+.project-layout { display: flex; align-items: center; gap: 60px; }
+.project-info { flex: 1; }
+.specs-list { list-style: none; margin-top: 30px; padding: 0; }
+.specs-list li { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
+.specs-list i { color: var(--accent); font-size: 1.5rem; margin-top: 5px; }
+.specs-list strong { color: #fff; display: block; margin-bottom: 5px; }
+
+.project-image { flex: 1; display: flex; justify-content: flex-end; }
+.tech-frame { position: relative; padding: 10px; border: 1px solid rgba(0, 168, 255, 0.3); }
+.tech-frame img { width: 100%; display: block; }
+.badge {
+    position: absolute; bottom: 20px; right: -10px; background-color: var(--accent);
+    color: #000; padding: 10px 25px; font-weight: 700;
+    font-family: var(--font-heading); box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* =========================================
+   FOOTER (site.jpg Tarzı)
+   ========================================= */
+footer { background-color: #050505; padding: 70px 0 20px; border-top: 1px solid #1f2833; }
+.footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 40px; }
+
+.footer-logo { font-family: var(--font-heading); font-size: 2.2rem; color: var(--accent); margin-bottom: 20px; }
+.socials-box a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border: 1px solid #333; border-radius: 5px;
+    color: #fff; margin-right: 10px; transition: 0.3s; text-decoration: none;
+}
+.socials-box a:hover { background-color: var(--accent); color: #000; border-color: var(--accent); }
+
+.footer-heading { color: var(--accent); font-size: 1.1rem; margin-bottom: 20px; }
+.icon-text { display: flex; gap: 10px; color: #ccc; margin-bottom: 15px; font-size: 0.95rem; }
+.icon-text i { color: var(--accent); margin-top: 4px; }
+
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { text-decoration: none; color: #ccc; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+.footer-links a i { font-size: 0.7rem; color: #555; }
+.footer-links a:hover { color: var(--accent); padding-left: 5px; }
+.footer-links a:hover i { color: var(--accent); }
+
+.footer-bottom { text-align: center; border-top: 1px solid #1f2833; padding-top: 20px; color: #555; font-size: 0.9rem; }
+
+/* =========================================
+   MOBİL UYUM
+   ========================================= */
+@media (max-width: 992px) {
+    .split-layout, .team-layout, .project-layout { flex-direction: column; text-align: center; }
+    .team-sidebar { width: 100%; margin-bottom: 40px; }
+    .team-grid { width: 100%; }
+    .specs-list { text-align: left; display: inline-block; }
+    .divider, .blue-line { margin: 0 auto 30px auto; }
+    .main-title { font-size: 3.5rem; }
+    .project-image { justify-content: center; }
+    .footer-content { flex-direction: column; text-align: center; }
+    .icon-text, .footer-links a { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-links {
+        position: absolute; top: 100%; left: 0; width: 100%;
+        background-color: rgba(11, 12, 16, 0.98); flex-direction: column;
+        padding: 30px 0; display: none;
+    }
+    .nav-links.active { display: flex; }
+    .team-grid { grid-template-columns: 1fr; }
+}
