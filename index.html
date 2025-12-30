@@ -1,39 +1,204 @@
-<button id="open-contact" class="nav-contact-btn">İletişim</button>
-
-<div id="contact-overlay" class="contact-overlay">
-    <button id="close-contact" class="close-overlay">×</button>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUATEAM | İnsansız Su Altı Sistemleri</title>
     
-    <div class="overlay-container">
-        <div class="contact-wrapper">
-            <div class="map-box">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.314541744154!2d30.53326177655909!3d38.81373385101036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d9697960309995%3A0xcb06f89025e982d6!2sAfyon%20Kocatepe%20%C3%9cniversitesi%20ANS%20Kamp%C3%BCs%C3%BC!5e0!3m2!1str!2str!4v1703770000000!5m2!1str!2str" 
-                    width="100%" height="450" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy">
-                </iframe>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="logo-link">
+                <img src="aqua1.1.jpg" alt="AQUATEAM" class="nav-logo">
+            </a>
+
+            <div class="nav-links">
+                <a href="#home" class="active">Ana Sayfa</a>
+                <a href="#about">Hakkımızda</a>
+                <a href="#team">Takımımız</a>
+                <a href="#project">Proje: CORAL</a>
+                <a href="#contact">İletişim</a>
             </div>
-
-            <div class="form-box">
-                <span class="form-badge">Bize Ulaşın</span>
-                <h2>Herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin</h2>
-                
-                <form id="contact-form-inner">
-                    <div class="form-row">
-                        <input type="text" placeholder="Ad Soyad" required>
-                        <input type="email" placeholder="Mail Adresi" required>
-                    </div>
-                    <input type="text" placeholder="Konu" required>
-                    <textarea placeholder="Mesajınız" rows="5" required></textarea>
-                    
-                    <button type="submit" class="send-btn">
-                        Mesajı Gönder <i class="fas fa-arrow-right"></i>
-                    </button>
-                </form>
-
-                <div class="contact-details-mini">
-                    <p><i class="fas fa-map-marker-alt"></i> AKÜ ANS Kampüsü, TYK Atölyesi, Afyonkarahisar</p>
-                    <p><i class="fas fa-envelope"></i> aquateam0303@gmail.com</p>
-                </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-    </div>
-</div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="main-title">AQUATEAM</h1>
+            <h2 class="sub-title">TEKNOFEST 2026 İnsansız Su Altı Sistemleri</h2>
+            <p class="hero-tagline">Geleceği Derinlerde Tasarlıyoruz</p>
+            <a href="#project" class="btn-neon">Aracımızı Keşfedin</a>
+        </div>
+    </section>
+
+    <section id="about" class="section dark-bg">
+        <div class="container split-layout">
+            <div class="text-block">
+                <h4 class="mini-tag">MİSYONUMUZ</h4>
+                <h2 class="section-title">TEKNOLOJİYİ <span class="highlight">YERLİ</span> ÜRETİYORUZ</h2>
+                <div class="divider"></div>
+                <p>
+                    AQUATEAM, Afyon Kocatepe Üniversitesi bünyesinde kurulmuş, su altı teknolojileri geliştiren yenilikçi bir takımdır. Milli Teknoloji Hamlesi doğrultusunda yerli ve özgün araçlar üretiyoruz.
+                </p>
+                <div class="stats-row">
+                    <div class="stat">
+                        <span class="num">6+</span>
+                        <span class="label">Mühendis</span>
+                    </div>
+                    <div class="stat">
+                        <span class="num">100%</span>
+                        <span class="label">Özgünlük</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-block visual-center">
+                <div class="glow-effect"></div>
+                <img src="aqua1.4.jpg" alt="AQUATEAM Vektör ROV" class="floating-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section darker-bg">
+        <div class="container">
+            <div class="team-layout">
+                
+                <div class="team-sidebar">
+                    <div class="sticky-wrapper">
+                        <h2 class="section-big-title">BİZ<br>AQUATEAM'İZ</h2>
+                        <div class="divider"></div>
+                        <p class="section-desc">
+                            AQUATEAM, Afyon Kocatepe Üniversitesi bünyesinde kurulmuş, 6 mühendislik öğrencisi ve 1 akademik danışmandan oluşan bir insansız su altı sistemleri takımıdır.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-grid">
+                    <div class="neon-card">
+                        <i class="fa-solid fa-gears card-icon"></i>
+                        <h3>Mekanik Ekip</h3>
+                        <p>Robotun mekanik tasarımı, montajı ve su geçirmezlik testlerinden sorumludur.</p>
+                    </div>
+                    <div class="neon-card">
+                        <i class="fa-solid fa-code card-icon"></i>
+                        <h3>Yazılım Ekibi</h3>
+                        <p>Otonom sistem algoritmaları, görüntü işleme ve kontrol yazılımlarını geliştirir.</p>
+                    </div>
+                    <div class="neon-card">
+                        <i class="fa-solid fa-microchip card-icon"></i>
+                        <h3>Elektrik-Elektronik</h3>
+                        <p>Güç dağıtımı, sensör entegrasyonu ve elektronik donanımlardan sorumludur.</p>
+                    </div>
+                    <div class="neon-card">
+                        <i class="fa-solid fa-clipboard-check card-icon"></i>
+                        <h3>Test Ekibi</h3>
+                        <p>Sistemin su altı performans testlerini yürütür ve verileri analiz eder.</p>
+                    </div>
+                    <div class="neon-card">
+                        <i class="fa-solid fa-gamepad card-icon"></i>
+                        <h3>Pilot</h3>
+                        <p>Robotun manuel kontrolünden ve test süreçlerinden sorumludur.</p>
+                    </div>
+                    <div class="neon-card">
+                        <i class="fa-solid fa-user-tie card-icon"></i>
+                        <h3>Takım Kaptanı</h3>
+                        <p>Takım koordinasyonu, planlama ve organizasyonel süreçleri yönetir.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="section dark-bg">
+        <div class="container">
+            <div class="project-layout">
+                
+                <div class="project-info">
+                    <h2 class="section-title">PROJEMİZ: <span class="highlight">CORAL</span></h2>
+                    <h4 class="mini-tag">İLERİ KATEGORİ ROV</h4>
+                    <div class="divider"></div>
+                    
+                    <p>
+                        TEKNOFEST 2026 için geliştirdiğimiz insansız su altı aracı. Yüksek manevra kabiliyeti ve otonom sürüş yeteneklerine sahiptir.
+                    </p>
+
+                    <ul class="specs-list">
+                        <li>
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <strong>Özgün Mekanik Tasarım:</strong> 6 itici motorlu, yüksek manevra kabiliyetli özgün gövde.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-microchip"></i>
+                            <div>
+                                <strong>Gelişmiş Kontrol Sistemi:</strong> Pixhawk otopilot ve Raspberry Pi 5 ile kesintisiz veri işleme.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-robot"></i>
+                            <div>
+                                <strong>Yapay Zekâ Destekli Otonomi:</strong> YOLOv9 ve OpenCV ile geliştirilen otonom görev algoritmaları.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-image">
+                    <div class="tech-frame">
+                        <img src="aqua1.4.jpg" alt="CORAL ROV">
+                        <div class="badge">CORAL ROV</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            
+            <div class="footer-col">
+                <h3 class="footer-logo">AQUATEAM</h3>
+                <div class="socials-box">
+                    <a href="https://www.linkedin.com/company/aquateam-aku/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/aquateam.aku" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCU6G6FHqeZ5yLgDRqANEMMQ" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h5 class="footer-heading">Adres</h5>
+                <p class="icon-text"><i class="fas fa-map-marker-alt"></i> Afyon Kocatepe Üniversitesi, ANS Kampüsü, <br> TYK Atölyesi, Afyonkarahisar</p>
+                <p class="icon-text"><i class="fas fa-envelope"></i> aquateam0303@gmail.com</p>
+            </div>
+
+            <div class="footer-col">
+                <h5 class="footer-heading">Hızlı Bağlantılar</h5>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Ana Sayfa</a></li>
+                    <li><a href="#team"><i class="fas fa-chevron-right"></i> Takımımız</a></li>
+                    <li><a href="#project"><i class="fas fa-chevron-right"></i> Proje: CORAL</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AQUATEAM. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
