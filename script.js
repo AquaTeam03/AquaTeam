@@ -1,26 +1,30 @@
-// İletişim Ekranı Kontrolleri
-const openBtn = document.getElementById('open-contact');
-const closeBtn = document.getElementById('close-contact');
-const overlay = document.getElementById('contact-overlay');
 
-if(openBtn) {
-    openBtn.addEventListener('click', () => {
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Arka plan kaymasın
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('navbar');
+    
+    // Navbar Scroll Efekti
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
-}
 
-if(closeBtn) {
-    closeBtn.addEventListener('click', () => {
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Kaydırmayı geri aç
-    });
-}
+    // Mobil Menü
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-// ESC tuşuyla kapatma
-window.addEventListener('keydown', (e) => {
-    if(e.key === "Escape") {
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
     }
+
+    // Linke tıklayınca menüyü kapat
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
 });
